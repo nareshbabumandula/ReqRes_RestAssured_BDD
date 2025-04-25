@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.reqres.api</groupId>
+    <artifactId>RestAssuredFramework</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+    
+        <!-- REST Assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.3.1</version>
+        </dependency>
+        
+        <dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>cucumber-junit</artifactId>
+		    <version>7.14.0</version>
+		    <scope>test</scope>
+		</dependency>
+		        
+         <dependency>
+	        <groupId>io.cucumber</groupId>
+	        <artifactId>cucumber-java</artifactId>
+	        <version>7.14.0</version>
+    	</dependency>
+    	
+	    <dependency>
+	        <groupId>io.cucumber</groupId>
+	        <artifactId>cucumber-testng</artifactId>
+	        <version>7.14.0</version>
+	    </dependency>
+
+        <!-- JSON Path -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-path</artifactId>
+            <version>5.3.1</version>
+        </dependency>
+
+        <!-- Jackson Databind (for Serialization/Deserialization) -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.2</version>
+        </dependency>
+
+        <!-- TestNG for Testing -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.9.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Gson (Optional for JSON parsing) -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        
+	    <dependency>
+	        <groupId>io.qameta.allure</groupId>
+	        <artifactId>allure-cucumber7-jvm</artifactId>
+	        <version>2.25.0</version>
+	    </dependency>
+	    
+	    <dependency>
+		    <groupId>org.hamcrest</groupId>
+		    <artifactId>hamcrest</artifactId>
+		    <version>2.2</version>
+		    <scope>test</scope>
+		</dependency>
+		
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Maven Surefire Plugin for running TestNG -->
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.11.0</version> <!-- Updated version -->
+            <configuration>
+                <source>17</source>   <!-- or 18, based on your JDK -->
+                <target>17</target>   <!-- or 18 -->
+            </configuration>
+        	</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
