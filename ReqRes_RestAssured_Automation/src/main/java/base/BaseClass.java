@@ -17,5 +17,4 @@ public class BaseClass {
 				.accept("application/json")
 				.header("x-api-key", "reqres-free-v1");
 	}
-	
 }

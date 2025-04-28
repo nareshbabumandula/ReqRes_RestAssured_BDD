@@ -2,10 +2,10 @@
 Feature: Validate CRUD opeations on reqres.in
 
 Scenario: Create a new user
-  Given I create a user with name "Aarti" and job "QA Engineer"
+  Given I create a user with name "Aarti" and job "Senior QA Engineer"
   Then The response status code should be 201
   And The response should contain name "Aarti"
-
+  
 Scenario: Get user list
   Given I fetch the user list
   Then The response status code should be 200
