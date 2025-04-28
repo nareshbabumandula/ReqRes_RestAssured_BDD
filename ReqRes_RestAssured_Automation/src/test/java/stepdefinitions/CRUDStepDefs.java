@@ -13,13 +13,21 @@ public class CRUDStepDefs extends BaseClass{
 	@Given("I create a user with name {string} and job {string}")
 	public void createUser(String name, String job) {
 		String payload = String.format("{\"name\":\"%s\",\"job\":\"%s\"}", name, job);
-		response = request.body(payload)
+		//System.out.println("Request Base URI: " + request.getBaseUri());
+		response = request
+				.body(payload)
 				.post("/api/users");
 	}
+		
 
 	@Then("The response status code should be {int}")
 	public void validateStatusCode(int expResponseCode) {
-		assertEquals(expResponseCode, response.getStatusCode());
+		int actualResponseCode = response.getStatusCode();
+		String responseBody = response.getBody().asString();
+		System.out.println("API Response body..!");
+		System.out.println(responseBody);
+		assertEquals("Expected status code " + expResponseCode + " but got " +actualResponseCode + "\nResponse Body: "
+				+ responseBody, expResponseCode, actualResponseCode);
 	}
 
 	@Then("The response should contain name {string}")

@@ -14,7 +14,8 @@ public class BaseClass {
 		request = given()
 				.baseUri(BASE_URL)
 				.contentType("application/json")
-				.accept("application/json");
+				.accept("application/json")
+				.header("x-api-key", "reqres-free-v1");
 	}
 	
 }
