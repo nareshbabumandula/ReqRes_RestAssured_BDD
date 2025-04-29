@@ -23,3 +23,7 @@ Scenario: Update user
 Scenario: Delete user
   When I delete the user with id 2
   Then The response status code should be 204
+
+Scenario: Register a user
+  When I register a user with email "eve.holt@reqres.in" and password "pistol"
+  Then The response status code should be 200
