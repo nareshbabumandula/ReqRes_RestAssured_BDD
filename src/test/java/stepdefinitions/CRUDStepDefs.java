@@ -20,7 +20,6 @@ public class CRUDStepDefs extends BaseClass{
 				.post("/api/users");
 	}
 
-
 	@Then("The response status code should be {int}")
 	public void validateStatusCode(int expResponseCode) {
 		int actualResponseCode = response.getStatusCode();
