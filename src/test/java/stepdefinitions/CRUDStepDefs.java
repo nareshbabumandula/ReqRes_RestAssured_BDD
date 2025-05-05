@@ -81,7 +81,8 @@ public class CRUDStepDefs extends BaseClass{
 		assertEquals(200, response.getStatusCode());
 
 		JsonPath jsonPath = response.jsonPath();
-
+		
+		// Retrieve ID
 		int IDValue = jsonPath.getInt("id");
 		String tokenValue = jsonPath.getString("token"); 
 
