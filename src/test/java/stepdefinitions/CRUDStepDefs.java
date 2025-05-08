@@ -88,7 +88,7 @@ public class CRUDStepDefs extends BaseClass{
 		System.out.println("ID is : "+ IDValue);
 		System.out.println("Token is : "+ tokenValue);
 
-		//Assertions on JSON response
+		//Assertions on JSON response body
 		assertNotNull(jsonPath.getInt("id"), "id is missing in response!");
 		org.junit.Assert.assertNotNull(jsonPath.get("token"), "token is missing in response!");
 
