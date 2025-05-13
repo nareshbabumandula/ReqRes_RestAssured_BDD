@@ -82,7 +82,7 @@ public class CRUDStepDefs extends BaseClass{
 
 		JsonPath jsonPath = response.jsonPath();
 		
-		// Get ID value
+		// Get ID value from json response using jsonpath
 		int IDValue = jsonPath.getInt("id");
 		String tokenValue = jsonPath.getString("token"); 
 
